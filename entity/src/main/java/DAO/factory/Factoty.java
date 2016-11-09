@@ -15,6 +15,7 @@ public class Factoty {
     private static TypeService typeService = null;
     private static PhoneService phoneService = null;
     private static SaunaService saunaService = null;
+    private static ActiveSessionService activeSessionService = null;
 
     private static Factoty instance = null;
 
@@ -65,5 +66,12 @@ public class Factoty {
             saunaService = new SaunaService();
         }
         return saunaService;
+    }
+
+    public ActiveSessionService getActiveSessionDAO() {
+        if (activeSessionService == null) {
+            activeSessionService = new ActiveSessionService();
+        }
+        return activeSessionService;
     }
 }

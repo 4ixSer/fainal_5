@@ -12,17 +12,18 @@ import java.util.List;
  */
 public class TypeService {
 
-    public EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
+
 
     public TypeService() {
 
     }
 
-    public TypeService(EntityManager em) {
-        this.em = em;
-    }
+//    public TypeService(EntityManager em) {
+//        this.em = em;
+//    }
 
     public ServiceType createServiceType(ServiceType newServiceType) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         ServiceType type = newServiceType;
         em.persist(type);
@@ -31,6 +32,7 @@ public class TypeService {
     }
 
     public void removeServiceType(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         ServiceType type = em.find(ServiceType.class, id);
 
@@ -41,6 +43,7 @@ public class TypeService {
     }
 
     public ServiceType findServiceType(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         ServiceType type =em.find(ServiceType.class, id);
         em.getTransaction().commit();
@@ -48,6 +51,7 @@ public class TypeService {
     }
 
     public List<ServiceType> findAllServiceType() {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         TypedQuery<ServiceType> query = em.createQuery("SELECT a FROM ServiceType a", ServiceType.class);
         em.getTransaction().commit();

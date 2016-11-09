@@ -1,50 +1,57 @@
 var dashboard = {
+    login: function () {
+        var log = $("#log").val();
+        var pass = $("#pass").val();
+        // console.log(log);
+        // console.log(pass);
+        $.ajax({
+            type: "POST",
+            url: "/api",
+            dataType: "json",
+            data: {requestType: "login", login: log, password: pass},
+            success: function (data) {
+                console.log(data.result);
+                if (data.result == "OK") document.location.href = 'search.html';
+              document.getElementById("logmessage").innerText = data.message;
+            }
+        });
+    },
+
 
 
     registration: function () {
         var log = $("#log").val();
         var pass = $("#pass").val();
-        var request = {};
-        request.log = log;
-        request.pass = pass;
-        request.requestType = "login";
         console.log(log);
         console.log(pass);
-
         $.ajax({
             type: "POST",
             url: "/api",
             dataType: "json",
-            data: request,
-            success: function (response) {
-
-                console.log(response.result);
-                document.location.href = 'search.html';
+            data: {requestType: "registration", login: log, password: pass},
+            success: function (data) {
+                console.log(data.result);
+                if (data.result == "OK") document.location.href = 'search.html';
+                document.getElementById("logmessage").innerText = data.message;
             }
         });
     },
 
-    login: function () {
-        var log = $("#log").val();
-        var pass = $("#pass").val();
-        var request = {};
-        request.log = log;
-        request.pass = pass;
-        request.requestType = "login";
-        console.log(log);
-        console.log(pass);
-     /* $.post("/api", request, function (response) {
-            console.log(response.key)
-        });*/
-    /*$.ajax({
+    search: function () {
+        var name = $("#searchName").val();
+
+        console.log(name);
+         $.ajax({
             type: "POST",
             url: "/api",
             dataType: "json",
-            data: request,
-            success: function (response) {
-                console.log(response.key)
-            }
-        });*/
-    }
+            data: {requestType: "searchName", name: name},
+            // success: function (data) {
+            //     console.log(data.result);
+            //
+            // }
+        });
+    },
+
 
 };

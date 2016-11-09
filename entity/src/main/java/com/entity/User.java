@@ -29,8 +29,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "userLogin")
-    private String userLogin;                      // логинаж пользователся
+    @Column(name = "userLogin_mail")
+    private String userLogin;                      // логинаж пользователся  и почта
 
     @Column(name = "userPassword")
     private String userPassword;                 // пароль пользователся
@@ -38,8 +38,6 @@ public class User {
     @Column(name = "userName")
     private String userName;                     // имя пользователся
 
-    @Column(name = "mail")
-    private String mail;                         // почта
 
     @Column(name = "phoneNamber")
     private int phoneNamber;                     // телефонный номер
@@ -91,13 +89,6 @@ public class User {
         this.userName = userName;
     }
 
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
 
     public int getPhoneNamber() {
         return phoneNamber;
@@ -129,7 +120,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "com.entity.User{" +
+        return "User{" +
                 "id=" + id +
                 ", userLogin='" + userLogin + '\'' +
                 ", userPassword='" + userPassword + '\'' +

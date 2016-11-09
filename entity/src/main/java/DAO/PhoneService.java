@@ -11,17 +11,16 @@ import java.util.List;
  * Created by qny4i on 04.11.2016.
  */
 public class PhoneService {
-    public EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
-
     public PhoneService() {
 
     }
 
-    public PhoneService(EntityManager em) {
-        this.em = em;
-    }
+//    public PhoneService(EntityManager em) {
+//        this.em = em;
+//    }
 
     public Phone createPhone(Phone newPhone) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Phone phone = newPhone;
         em.persist(phone);
@@ -30,6 +29,7 @@ public class PhoneService {
     }
 
     public void removePhone(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Phone phone = em.find(Phone.class, id);
 
@@ -40,6 +40,7 @@ public class PhoneService {
     }
 
     public Phone findPhone(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Phone phone =em.find(Phone.class, id);
         em.getTransaction().commit();
@@ -47,6 +48,7 @@ public class PhoneService {
     }
 
     public List<Phone> findAllPhone() {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         TypedQuery<Phone> query = em.createQuery("SELECT a FROM Phone a", Phone.class);
         em.getTransaction().commit();

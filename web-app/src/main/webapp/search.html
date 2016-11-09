@@ -12,6 +12,8 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleSlider.css" />
+    <link rel="stylesheet" href="css/styleSlider2.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -41,7 +43,7 @@
                     <li>
                         <form action="" class="navbar-form   " role="search">
                             <div class="form-group ">
-                                <input class="form-control " type="text" placeholder="Название сауны" value="">
+                                <input class="form-control " type="text" placeholder="Поиск по названию" value="">
                             </div>
                             <div class="form-group">
                                 <button typy="submit" class="btn btn-success">
@@ -67,55 +69,81 @@
                         <li><a href="#spoiler-1" data-toggle="collapse" class=" btn btn-info "> Цена за час</a>
                             <div class="collapse in" id="spoiler-1">
                                 <div class="well">
-                                    <p>ползунок со скролом </p>
+                                    <div class="masonry">
+                                        <p class="text-center">
+
+                                            <input type="text" id="amount">
+                                            <input type="text" id="amount_1">
+                                            грн.
+                                        </p>
+
+                                        <div id="slider-range"></div>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li> <a href="#spoiler-2" data-toggle="collapse" class=" btn btn-info "> Вместимость</a>
                             <div class="collapse in" id="spoiler-2">
                                 <div class="well">
-                                    <p>ползунок со скролом </p>
+                                    <div class="masonry">
+                                        <p class="text-center">
+
+                                            <input type="text" id="amount2">
+                                            <input type="text" id="amount_2">
+                                            чел.
+                                        </p>
+
+                                        <div id="slider-range2"></div>
+                                    </div>
+
                                 </div>
                             </div>
                         </li>
 
-                        <li><a href="#spoiler-3" data-toggle="collapse" class=" btn btn-info "> Тип парилки</a>
+                        <li><a href="#spoiler-3" data-toggle="collapse" class=" btn btn-info ">  Тип парилки</a>
                             <div class="collapse in" id="spoiler-3">
                                 <div class="well">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Option 1</label>
+                                            <input type="checkbox" class="checkbox" value=""><p>Руская</p></label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Option 2</label>
+                                            <input type="checkbox" class="checkbox" value=""><p> Финская</p></label>
                                     </div>
                                     <div class="checkbox disabled">
                                         <label>
-                                            <input type="checkbox" value="">Option 3</label>
+                                            <input type="checkbox" class="checkbox" value=""><p> Турецкая</p></label>
                                     </div>
                                     <div class="checkbox disabled">
                                         <label>
-                                            <input type="checkbox" value="">Option 3</label>
+                                            <input type="checkbox"  class="checkbox" value=""><p> Инфракрасная</p></label>
+                                    </div>
+                                    <div class="checkbox disabled">
+                                        <label>
+                                            <input type="checkbox" class="checkbox" value=""><p> Японская</p></label>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li><a href="#spoiler-4" data-toggle="collapse" class=" btn btn-info "> Какието опции</a>
+                        <li><a href="#spoiler-4" data-toggle="collapse" class=" btn btn-info ">Район </a>
                             <div class="collapse in" id="spoiler-4">
                                 <select class="form-control">
                                     <option>All option</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>Холодногорскй</option>
+                                    <option>Дзержинский</option>
+                                    <option>Московский</option>
+                                    <option>Шевченковский</option>
+                                    <option>Киевский</option>
+                                    <option>Московский</option>
+                                    <option>Орджоникидзевский</option>
+                                    <option>Фрунзенский</option>
                                 </select>
                             </div>
                         </li>
 
                         <li>
-                            <a class="btn btn-success navbar-btn " href="">
+                            <a class="btn btn-success navbar-btn " href="search.html">
                                 <i class="fa fa-search" aria-hidden="true"></i> Найти
                             </a>
                         </li>
@@ -427,6 +455,10 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/salvattore.min.js"></script>
     <script src="js/my.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/scriptSlider.js">  </script>
+    <script src="js/scriptSlider2.js"></script>
 </body>
 
 </html>

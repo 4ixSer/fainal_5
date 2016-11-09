@@ -11,17 +11,17 @@ import java.util.List;
  * Created by qny4i on 04.11.2016.
  */
 public class SaunaService {
-    public EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
 
     public SaunaService() {
 
     }
 
-    public SaunaService(EntityManager em) {
-        this.em = em;
-    }
+//    public SaunaService(EntityManager em) {
+//        this.em = em;
+//    }
 
     public Sauna createSauna(Sauna newSauna) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Sauna sauna = newSauna;
         em.persist(sauna);
@@ -30,6 +30,7 @@ public class SaunaService {
     }
 
     public void removeSauna(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Sauna sauna = em.find(Sauna.class, id);
 
@@ -40,6 +41,7 @@ public class SaunaService {
     }
 
     public Sauna findSauna(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Sauna sauna = em.find(Sauna.class, id);
         em.getTransaction().commit();
@@ -47,6 +49,7 @@ public class SaunaService {
     }
 
     public List<Sauna> findAllSauna() {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         TypedQuery<Sauna> query = em.createQuery("SELECT a FROM Sauna a", Sauna.class);
         em.getTransaction().commit();
@@ -54,6 +57,7 @@ public class SaunaService {
     }
 
     public Sauna changeSaunaName(int id, String newName) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         Sauna sauna = em.find(Sauna.class, id);
 
@@ -67,6 +71,7 @@ public class SaunaService {
     }
 
     public List<Sauna> findByName(String name) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         String Query = "SELECt a from Sauna a  where nameSauna Like '%";
         Query=Query.concat(name);
@@ -80,6 +85,7 @@ public class SaunaService {
     }
 
     public List<Sauna> findByPrice(Integer minValue, Integer maxValue) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         String Query = "SELECt a from Sauna a  where price >=" +minValue +" and price<=" +maxValue;
 //        Query=Query.concat(toString(minValue));
@@ -94,6 +100,7 @@ public class SaunaService {
 
 
     public List<Sauna> findByCapacity(Integer minValue, Integer maxValue) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         String Query = "SELECt a from Sauna a  where capacity >=" +minValue +" and capacity<=" +maxValue;
 //        Query=Query.concat(toString(minValue));
@@ -108,6 +115,7 @@ public class SaunaService {
 
 
     public List<Sauna> findByAll(List<String> value) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         String Query = "SELECt a from Sauna a  where price >=";
 

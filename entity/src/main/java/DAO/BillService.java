@@ -11,17 +11,16 @@ import java.util.List;
  * Created by qny4i on 03.11.2016.
  */
 public class BillService {
-    public EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
 
     public BillService() {
 
     }
 
-    public BillService(EntityManager em) {
-        this.em = em;
-    }
+
 
     public Bill createBill(Bill newBill) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
+
         em.getTransaction().begin();
         Bill bill = newBill;
         em.persist(bill);
@@ -30,6 +29,8 @@ public class BillService {
     }
 
     public void removeBill(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
+
         em.getTransaction().begin();
         Bill bill = em.find(Bill.class, id);
 
@@ -40,6 +41,8 @@ public class BillService {
     }
 
     public Bill findBill(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
+
         em.getTransaction().begin();
         Bill bill =em.find(Bill.class, id);
         em.getTransaction().commit();
@@ -47,6 +50,8 @@ public class BillService {
     }
 
     public List<Bill> findAllBill() {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
+
         em.getTransaction().begin();
         TypedQuery<Bill> query = em.createQuery("SELECT a FROM Bill a", Bill.class);
         em.getTransaction().commit();

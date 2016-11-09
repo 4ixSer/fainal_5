@@ -38,4 +38,29 @@
     }
 }
 
+.newImput{
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+
+
+}
+
+.checkbox {
+    vertical-align: top;
+    margin: 0 3px 0 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+
+
+}
+
+.checkbox p{
+    padding-left: 10px;
+}
+
 

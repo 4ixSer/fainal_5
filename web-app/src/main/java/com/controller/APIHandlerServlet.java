@@ -36,6 +36,9 @@ public class APIHandlerServlet extends HttpServlet{
         Map<String, APIRequestHandler> map = new HashMap<>();
 
         map.put("login", LoginServlet.getInstance());
+        map.put("registration", RegistrationServlet.getInstance());
+        map.put("searchName", Search1Servlet.getInstance());
+        map.put("searchOptions", RegistrationServlet.getInstance());
         apiRequestHandlers = Collections.unmodifiableMap(map);
     }
 

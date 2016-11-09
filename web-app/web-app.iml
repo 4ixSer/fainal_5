@@ -37,5 +37,6 @@
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:4.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" level="project" />
     <orderEntry type="module" module-name="manager" />
+    <orderEntry type="library" name="Maven: org.glassfish.distributions:web-all:10.0-build-20080427" level="project" />
   </component>
 </module>

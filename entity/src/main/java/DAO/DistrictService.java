@@ -12,17 +12,18 @@ import java.util.List;
  */
 public class DistrictService {
 
-    public EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
+
 
     public DistrictService() {
 
     }
 
-    public DistrictService(EntityManager em) {
-        this.em = em;
-    }
+//    public DistrictService(EntityManager em) {
+//        this.em = em;
+//    }
 
     public District createDistrict(District newDistrict) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         District district = newDistrict;
         em.persist(district);
@@ -31,6 +32,7 @@ public class DistrictService {
     }
 
     public void removeDistrict(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         District district = em.find(District.class, id);
 
@@ -41,6 +43,7 @@ public class DistrictService {
     }
 
     public District findDistrict(int id) {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         District district =em.find(District.class, id);
         em.getTransaction().commit();
@@ -48,6 +51,7 @@ public class DistrictService {
     }
 
     public List<District> findAllDistrict() {
+        EntityManager em = Persistence.createEntityManagerFactory("Jpa").createEntityManager();
         em.getTransaction().begin();
         TypedQuery<District> query = em.createQuery("SELECT a FROM District a", District.class);
         em.getTransaction().commit();

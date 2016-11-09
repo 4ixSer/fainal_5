@@ -25,6 +25,7 @@
           <element id="archive" name="f-manager-1.0-SNAPSHOT.jar">
             <element id="module-output" name="manager" />
           </element>
+          <element id="library" level="project" name="Maven: org.glassfish.distributions:web-all:10.0-build-20080427" />
         </element>
       </element>
       <element id="directory" name="META-INF">

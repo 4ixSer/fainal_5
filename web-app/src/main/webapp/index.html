@@ -12,334 +12,392 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleSlider.css"/>
+    <link rel="stylesheet" href="css/styleSlider2.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body class="mixSHir">
-    <div class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"> LOGO</a>
-            </div>
-            <div class="collapse navbar-collapse" id="responsive-menu">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Главная</a></li>
-
-                    <li><a href="#">Контакты</a></li>
-                    <li>
-                        <form action="" class="navbar-form   " role="search">
-                            <div class="form-group ">
-                                <input class="form-control " type="text" placeholder="Название сауны" value="">
-                            </div>
-                            <div class="form-group">
-                                <button typy="submit" class="btn btn-success">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-                <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#modal-1">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> Войти
-                </button>
-
-            </div>
-        </div>
-    </div>
-
+<div class="navbar navbar-default navbar-static-top">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <div class="row">
-                    <ul class="nav nav-sidebar">
-                        <li><a href="#spoiler-1" data-toggle="collapse" class=" btn btn-info "> Цена за час</a>
-                            <div class="collapse in" id="spoiler-1">
-                                <div class="well">
-                                    <p>ползунок со скролом </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li> <a href="#spoiler-2" data-toggle="collapse" class=" btn btn-info "> Вместимость</a>
-                            <div class="collapse in" id="spoiler-2">
-                                <div class="well">
-                                    <p>ползунок со скролом </p>
-                                </div>
-                            </div>
-                        </li>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"> LOGO</a>
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-menu">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Главная</a></li>
 
-                        <li><a href="#spoiler-3" data-toggle="collapse" class=" btn btn-info "> Тип парилки</a>
-                            <div class="collapse in" id="spoiler-3">
-                                <div class="well">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Option 1</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Option 2</label>
-                                    </div>
-                                    <div class="checkbox disabled">
-                                        <label>
-                                            <input type="checkbox" value="">Option 3</label>
-                                    </div>
-                                    <div class="checkbox disabled">
-                                        <label>
-                                            <input type="checkbox" value="">Option 3</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#spoiler-4" data-toggle="collapse" class=" btn btn-info "> Какието опции</a>
-                            <div class="collapse in" id="spoiler-4">
-                                <select class="form-control">
-                                    <option>All option</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a class="btn btn-success navbar-btn " href="search.html">
-                                <i class="fa fa-search" aria-hidden="true"></i> Найти
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-               
-               <div>
-                   <h3 class= "text-center">Добро пожаловать!</h3> <p>Наш проект поможет вам сделать лучший выбор и провести отлично время в лучших саунах города Харькова. Сауны Харькова предлагают все наиболее распространенные виды услуг. На данной странице собраны организации предоставляющие данную услугу на постоянно основе.</p>
-                   
-               </div>
-                <div>
-                    <div id="carousel" class="carousel slide">
-
-                        <ol class="carousel-indicators">
-                            <li class="active" data-target="#carousel" data-slide="0"></li>
-                            <li data-target="#carousel" data-slide="1"></li>
-                            <li data-target="#carousel" data-slide="2"></li>
-                            <li data-target="#carousel" data-slide="3"></li>
-                            <li data-target="#carousel" data-slide="4"></li>
-                            <li data-target="#carousel" data-slide="5"></li>
-                            <li data-target="#carousel" data-slide="6"></li>
-                            
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="image/0.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Сауны Харькова  - это:</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="image/1.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Современные интерьер</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="image/2.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Стильный дизайн</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="image/3.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Настоящее дерево</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="image/4.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Строгий минимализм</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="image/5.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Роскошный  максимализм</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="image/6.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h3>Лучший банный инвентарь</h3>
-                                    
-                                </div>
-                            </div>
+                <li><a href="#">Контакты</a></li>
+                <li>
+                    <form action="" class="navbar-form   " role="search">
+                        <div class="form-group ">
+                            <input class="form-control " id="searchName" type="text" placeholder="Поиск по названию" value="">
                         </div>
-                        <a href="#carousel" class="left carousel-control" data-slide="prev">
-                            <span class="glyphcon glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a href="#carousel" class="right carousel-control" data-slide="next">
-                            <span class="glyphcon glyphicon glyphicon-chevron-right"></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                   <h3 class= "text-center">Лучшие предложения !</h3> 
-                   
-               </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/400x240" alt="">
-                            <div class="caption">
-                                <a href="#"><h3>Название</h3></a>
-                                <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость: N человек</p>
-                                <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N грн/час</p>
+                        <div class="form-group">
 
-                                <a href="office.html" class="btn btn-info btn-block "> Подробней <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                            </div>
+
+                            <button type="submit" class="btn btn-success" onclick="dashboard.search()">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/400x240" alt="">
-                            <div class="caption">
-                                <a href="#"><h3>Название</h3></a>
-                                <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость: N человек</p>
-                                <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N грн/час</p>
-
-                                <a href="office.html" class="btn btn-info btn-block "> Подробней <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/400x240" alt="">
-                            <div class="caption">
-                                <a href="#"><h3>Название</h3></a>
-                                <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость: N человек</p>
-                                <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N грн/час</p>
-
-                                <a href="office.html" class="btn btn-info btn-block "> Подробней <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+                    </form>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal"
+                    data-target="#modal-1">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Войти
+            </button>
 
         </div>
     </div>
-       
-        <!--Модальное окно-->
-        <div class="modal" id="modal-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title text-center">Вход в личный кобинет </h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <form action="" class=" form-horizontal">
-                                <div class="input-group pravilo">
-                                    <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" id="log" placeholder="Email">
-                                </div>
+</div>
 
-                                <div class="input-group  pravilo verh">
-                                    <span class="input-group-addon "><i class="fa fa-key" aria-hidden="true"></i></span>
-                                    <input class="form-control" type="password" id="pass"placeholder="Пароль " value="">
-                                </div>
-                                <div class="text-center">
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" id="inlineCheckbox1" value="option1"> Чужой копьютер
-                                    </label>
-                                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="row">
+                <ul class="nav nav-sidebar">
+                    <li><a href="#spoiler-1" data-toggle="collapse" class=" btn btn-info "> Цена за час</a>
+                        <div class="collapse in" id="spoiler-1">
+                            <div class="well">
+                                <div class="masonry">
+                                    <p class="text-center">
 
-                                <div class="text-center verh">
-                                   
-                                    <input typy="button" class="btn btn-primary"  onclick="dashboard.login()"  value="Sign In" >
-                                    <input typy="button" class="btn btn-primary"  onclick="dashboard.registration()"  value="Зарегистрироваться" >
-
-
-
-
-
-                                </div>
-                                <div class="text-center verh">
-                                    <p> <a href="#">Забыли пароль или не можете войти</a>?
-                                        <br> Войти как пользователь
+                                        <input type="text" id="amount">
+                                        <input type="text" id="amount_1">
+                                        грн.
                                     </p>
-                                    <div class="btn-group ">
-                                        <a href="#" class="btn btn-primary active"><i class="fa fa-vk" aria-hidden="true"></i></a>
-                                        <a href="#" class="btn btn-primary">ВКонтакте</a>
 
-                                    </div>
-
-                                    <div class="btn-group ">
-                                        <a href="#" class="btn btn-primary active"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                                        <a href="#" class="btn btn-primary">Facebook</a>
-
-                                    </div>
+                                    <div id="slider-range"></div>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#spoiler-2" data-toggle="collapse" class=" btn btn-info "> Вместимость</a>
+                        <div class="collapse in" id="spoiler-2">
+                            <div class="well">
+                                <div class="masonry">
+                                    <p class="text-center">
+
+                                        <input type="text" id="amount2">
+                                        <input type="text" id="amount_2">
+                                        чел.
+                                    </p>
+
+                                    <div id="slider-range2"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#spoiler-3" data-toggle="collapse" class=" btn btn-info "> Тип парилки</a>
+                        <div class="collapse in" id="spoiler-3">
+                            <div class="well">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" value="">
+                                        <p>Руская</p></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" value="">
+                                        <p> Финская</p></label>
+                                </div>
+                                <div class="checkbox disabled">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" value="">
+                                        <p> Турецкая</p></label>
+                                </div>
+                                <div class="checkbox disabled">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" value="">
+                                        <p> Инфракрасная</p></label>
+                                </div>
+                                <div class="checkbox disabled">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" value="">
+                                        <p> Японская</p></label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#spoiler-4" data-toggle="collapse" class=" btn btn-info ">Район </a>
+                        <div class="collapse in" id="spoiler-4">
+                            <select class="form-control">
+                                <option>All option</option>
+                                <option>Холодногорскй</option>
+                                <option>Дзержинский</option>
+                                <option>Московский</option>
+                                <option>Шевченковский</option>
+                                <option>Киевский</option>
+                                <option>Московский</option>
+                                <option>Орджоникидзевский</option>
+                                <option>Фрунзенский</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a class="btn btn-success navbar-btn " href="search.html">
+                            <i class="fa fa-search" aria-hidden="true"></i> Найти
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+
+            <div>
+                <h3 class="text-center">Добро пожаловать!</h3>
+                <p>Наш проект поможет вам сделать лучший выбор и провести отлично время в лучших саунах города Харькова.
+                    Сауны Харькова предлагают все наиболее распространенные виды услуг. На данной странице собраны
+                    организации предоставляющие данную услугу на постоянно основе.</p>
+
+            </div>
+            <div>
+                <div id="carousel" class="carousel slide">
+
+                    <ol class="carousel-indicators">
+                        <li class="active" data-target="#carousel" data-slide="0"></li>
+                        <li data-target="#carousel" data-slide="1"></li>
+                        <li data-target="#carousel" data-slide="2"></li>
+                        <li data-target="#carousel" data-slide="3"></li>
+                        <li data-target="#carousel" data-slide="4"></li>
+                        <li data-target="#carousel" data-slide="5"></li>
+                        <li data-target="#carousel" data-slide="6"></li>
+
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="image/0.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Сауны Харькова - это:</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="image/1.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Современные интерьер</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="image/2.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Стильный дизайн</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="image/3.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Настоящее дерево</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="image/4.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Строгий минимализм</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="image/5.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Роскошный максимализм</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="image/6.jpg" alt="">
+                            <div class="carousel-caption">
+                                <h3>Лучший банный инвентарь</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#carousel" class="left carousel-control" data-slide="prev">
+                        <span class="glyphcon glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="#carousel" class="right carousel-control" data-slide="next">
+                        <span class="glyphcon glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Лучшие предложения !</h3>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/400x240" alt="">
+                        <div class="caption">
+                            <a href="#"><h3>Название</h3></a>
+                            <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость:
+                                N человек</p>
+                            <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N
+                                грн/час</p>
+
+                            <a href="office.html" class="btn btn-info btn-block "> Подробней <i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/400x240" alt="">
+                        <div class="caption">
+                            <a href="#"><h3>Название</h3></a>
+                            <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость:
+                                N человек</p>
+                            <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N
+                                грн/час</p>
+
+                            <a href="office.html" class="btn btn-info btn-block "> Подробней <i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/400x240" alt="">
+                        <div class="caption">
+                            <a href="#"><h3>Название</h3></a>
+                            <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость:
+                                N человек</p>
+                            <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N
+                                грн/час</p>
+
+                            <a href="office.html" class="btn btn-info btn-block "> Подробней <i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--Модальное окно-->
+<div class="modal" id="modal-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center">Вход в личный кобинет </h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <form action="" class=" form-horizontal">
+                        <div class="input-group pravilo">
+                            <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="log" placeholder="Email">
                         </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-danger" type="button" data-dismiss="modal">Отмена</button>
-                    </div>
+                        <div class="input-group  pravilo verh">
+                            <span class="input-group-addon "><i class="fa fa-key" aria-hidden="true"></i></span>
+                            <input class="form-control" type="password" id="pass" placeholder="Пароль " value="">
+                        </div>
+                        <div class="text-center">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Чужой копьютер
+                            </label>
+                        </div>
 
+                        <div class="text-center verh">
+
+                            <input typy="button" class="btn btn-success" onclick="dashboard.login()" value="Sign In">
+                            <input typy="button" class="btn btn-primary" onclick="dashboard.registration()"
+                                   value="Зарегистрироваться">
+
+
+                        </div>
+                        <div>
+                            <h5 CLASS="pravilo text-center " id="logmessage"></h5>
+
+
+                        </div>
+                        <div class="text-center verh">
+                            <p><a href="#">Забыли пароль или не можете войти</a>?
+                                <br> Войти как пользователь
+                            </p>
+                            <div class="btn-group ">
+                                <a href="#" class="btn btn-primary active"><i class="fa fa-vk"
+                                                                              aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-primary">ВКонтакте</a>
+
+                            </div>
+
+                            <div class="btn-group ">
+                                <a href="#" class="btn btn-primary active"><i class="fa fa-facebook-square"
+                                                                              aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-primary">Facebook</a>
+
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
             </div>
-        </div>
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-xs-8">
-                    <ul class="list-unstyled list-inline pull-left">
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-4">
-                    <p class="text-muted pull-right">© 2016 GSS. All rights reserved</p>
-                </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button" data-dismiss="modal">Отмена</button>
             </div>
+
         </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-8">
+            <ul class="list-unstyled list-inline pull-left">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-4">
+            <p class="text-muted pull-right">© 2016 GSS. All rights reserved</p>
+        </div>
+    </div>
+</div>
 
 
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.js"></script>
-        <script src="js/salvattore.min.js"></script>
-        <script src="js/my.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+<script src="js/salvattore.min.js"></script>
+<script src="js/my.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="js/scriptSlider.js"></script>
+<script src="js/scriptSlider2.js"></script>
 </body>
 
 </html>
