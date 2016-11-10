@@ -11,7 +11,7 @@ import java.util.List;
  *
  */
 @Entity
-@Table(name = "com.entity.District")
+@Table(name = "District")
 public class District {
 
     @Id

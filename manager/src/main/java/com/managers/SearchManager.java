@@ -1,7 +1,7 @@
 package com.managers;
 
 import DAO.factory.Factoty;
-import com.entity.Sauna;
+import com.entity.*;
 
 import java.util.List;
 
@@ -22,7 +22,11 @@ public class SearchManager {
     }
 
     public String find(String name) {
-        List<Sauna> saunaList = Factoty.getInstance().getSaunaDAO().findAllSauna();
+
+
+        List<Sauna> saunaList = Factoty.getInstance().getSaunaDAO().findByName(name);
+
+
 
         for (int i = 0; i < saunaList.size(); i++) {
             System.out.print("Название - " + saunaList.get(i).getName());

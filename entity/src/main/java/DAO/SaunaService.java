@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class SaunaService {
 
+
     public SaunaService() {
 
     }

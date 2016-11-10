@@ -153,7 +153,7 @@ public class Sauna {
 
     @Override
     public String toString() {
-        return "com.entity.Sauna{" +
+        return "Sauna{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", capacity=" + capacity +

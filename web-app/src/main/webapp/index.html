@@ -138,22 +138,22 @@
                     </li>
                     <li><a href="#spoiler-4" data-toggle="collapse" class=" btn btn-info ">Район </a>
                         <div class="collapse in" id="spoiler-4">
-                            <select class="form-control">
-                                <option>All option</option>
-                                <option>Холодногорскй</option>
-                                <option>Дзержинский</option>
-                                <option>Московский</option>
-                                <option>Шевченковский</option>
-                                <option>Киевский</option>
-                                <option>Московский</option>
-                                <option>Орджоникидзевский</option>
-                                <option>Фрунзенский</option>
+                            <select class="form-control" id="myselect">
+                                <option value="0">All option</option>
+                                <option value="1">Холодногорскй</option>
+                                <option value="2">Дзержинский</option>
+                                <option value="3">Московский</option>
+                                <option value="4">Шевченковский</option>
+                                <option value="5">Киевский</option>
+                                <option value="6">Московский</option>
+                                <option value="7">Орджоникидзевский</option>
+                                <option value="8">Фрунзенский</option>
                             </select>
                         </div>
                     </li>
 
                     <li>
-                        <a class="btn btn-success navbar-btn " href="search.html">
+                        <a class="btn btn-success navbar-btn " onclick="dashboard.search2()" >
                             <i class="fa fa-search" aria-hidden="true"></i> Найти
                         </a>
                     </li>

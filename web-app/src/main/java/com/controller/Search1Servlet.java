@@ -1,14 +1,10 @@
 package com.controller;
 
-import DAO.factory.Factoty;
-import com.entity.Sauna;
-import com.managers.LoginManeger;
 import com.managers.SearchManager;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONStreamAware;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * Created by qny4i on 10.11.2016.
@@ -32,7 +28,7 @@ public class Search1Servlet extends APIHandlerServlet.APIRequestHandler {
         String name = request.getParameter("name"); // с реквеста взяли параметро с именем сауны
 
 
-        SearchManager.getInstance().find("name");
+        SearchManager.getInstance().find(name);
 //        String response = LoginManeger.getInstance().logInUser(userLog, userPass); //проверили наличие чувака
 //        System.out.println();
 //        System.out.println(response);
