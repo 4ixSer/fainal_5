@@ -23,20 +23,14 @@ public class Search1Servlet extends APIHandlerServlet.APIRequestHandler {
 
     @Override
     protected JSONStreamAware processRequest(HttpServletRequest request) throws Exception {
-        JSONObject jsonObject = new JSONObject();       //создали обьект JSONObject
+             //создали обьект JSONObject
 
         String name = request.getParameter("name"); // с реквеста взяли параметро с именем сауны
 
 
-        SearchManager.getInstance().find(name);
-//        String response = LoginManeger.getInstance().logInUser(userLog, userPass); //проверили наличие чувака
-//        System.out.println();
-//        System.out.println(response);
-//        System.out.println();
-//        String result = (response.charAt(0) == 'L') ? "OK" : "NO";
+        JSONObject jsonObject = SearchManager.getInstance().findByName(name);
 
-//        jsonObject.put("message", response);
-//        jsonObject.put("result", result);
+        System.out.println(jsonObject);
 
         return jsonObject;
     }

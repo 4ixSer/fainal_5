@@ -41,16 +41,15 @@
 
                     <li><a href="#">Контакты</a></li>
                     <li>
-                        <form action="" class="navbar-form   " role="search">
-                            <div class="form-group ">
-                                <input class="form-control " type="text" placeholder="Поиск по названию" value="">
-                            </div>
-                            <div class="form-group">
-                                <button typy="submit" class="btn btn-success">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </form>
+                        <div class="navbar-form   ">
+                            <input class="form-control " id="searchName" type="text" placeholder="Поиск по названию" value="">
+
+                            <button type="submit" class="btn btn-success" onclick="dashboard.search()">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+
+
+                        </div>
                     </li>
                 </ul>
                 <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#modal-1">
@@ -143,7 +142,7 @@
                         </li>
 
                         <li>
-                            <a class="btn btn-success navbar-btn " href="search.html">
+                            <a class="btn btn-success navbar-btn " onclick="dashboard.search2()" >
                                 <i class="fa fa-search" aria-hidden="true"></i> Найти
                             </a>
                         </li>
@@ -157,13 +156,13 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/400x240" alt="">
+                            <img id="image" src="http://placehold.it/400x240" alt="">
                             <div class="caption">
                                 <a href="#">
-                                    <h3>Название</h3>
+                                    <h3 id="nameSauna1">Название</h3>
                                 </a>
-                                <p><i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость: N человек</p>
-                                <p><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N грн/час</p>
+                                <p  id="capacity"> <i class="fa fa-users fa-2x " aria-hidden="true" style="color:#f0ad4e"></i> Вместимость: N человек</p>
+                                <p id="price"  ><i class="fa fa-money fa-2x" aria-hidden="true" style="color:#5cb85c"></i> Цена от: N грн/час</p>
 
                                 <a href="office.html" class="btn btn-info btn-block "> Подробней <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
