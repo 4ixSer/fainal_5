@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by qny4i on 10.11.2016.
  */
-public class Search1Servlet extends APIHandlerServlet.APIRequestHandler {
+public class SearchServlet extends APIHandlerServlet.APIRequestHandler {
 
-    public static final Search1Servlet instance = new Search1Servlet();
+    public static final SearchServlet instance = new SearchServlet();
 
 
-    public static Search1Servlet getInstance() {
+    public static SearchServlet getInstance() {
         return instance;
     }
 
-    private Search1Servlet() {
+    private SearchServlet() {
     }
 
     @Override

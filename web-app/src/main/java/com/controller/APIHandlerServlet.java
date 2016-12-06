@@ -1,7 +1,6 @@
 package com.controller;
 
 import com.utils.JSON;
-import com.utils.JSONResponses;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONStreamAware;
 
@@ -37,7 +36,7 @@ public class APIHandlerServlet extends HttpServlet{
 
         map.put("login", LoginServlet.getInstance());
         map.put("registration", RegistrationServlet.getInstance());
-        map.put("searchName", Search1Servlet.getInstance());
+        map.put("searchName", SearchServlet.getInstance());
         map.put("searchOptions", SearchOptionsServlet.getInstance());
         apiRequestHandlers = Collections.unmodifiableMap(map);
     }

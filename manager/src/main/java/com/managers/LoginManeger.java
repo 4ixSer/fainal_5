@@ -29,10 +29,17 @@ public class LoginManeger {
 
         User userNew = Factoty.getInstance().getUserDAO().findByLogin(login);
 
-        if (userNew == null)
-            return "User not found.";
-        if (!userNew.getUserPassword().equals(password))
-            return "Password is incorrect. Please, try again.";
+        if (userNew == null){
+            System.out.println("User not found.");
+            return "UserNotFound";
+        }
+
+        if (!userNew.getUserPassword().equals(password)){
+
+            System.out.println("Password is incorrect. Min length is 5, max length is 24");
+            return "PasswordIsIncorrect";
+        }
+
 
         String tokenString = userNew.getUserName() + System.currentTimeMillis() + (Math.random() * System.currentTimeMillis());
         String md5Hex = DigestUtils.md5Hex(tokenString);
@@ -49,19 +56,27 @@ public class LoginManeger {
             Factoty.getInstance().getActiveSessionDAO().updateActiveSession(activeSession);
         }
 
-       return "Login success.";
+       return "LoginSuccess";
     }
 
     public String registerInUser(String login, String password) {
         User userNew = Factoty.getInstance().getUserDAO().findByLogin(login);
-        if (userNew != null)
-            return "Login is already in use.";
-        if ((password.length()<5)&&(password.length()>24))
-            return "Password is incorrect. Min length is 5, max length is 24";
+        if (userNew != null) {
 
+            System.out.println( "Login is already in use.");
+            return "LoginIsUse";
+        }
+
+        System.out.println(password.length());
+        if ((password.length()<5)||(password.length()>24)) {
+
+            System.out.println("Password is incorrect. Min length is 5, max length is 24");
+            return "PasswordIsIncorrect";
+        }
         Factoty.getInstance().getUserDAO().createUser(new User(login,password,"name"));
 
-        return "Registration is success.";
+        System.out.println( "Registration is success.");
+        return "RegistrSuccess";
     }
 
 

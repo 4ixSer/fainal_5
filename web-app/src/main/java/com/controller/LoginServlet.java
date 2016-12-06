@@ -32,7 +32,7 @@ public class LoginServlet extends APIHandlerServlet.APIRequestHandler {
         System.out.println();
         System.out.println(response);
         System.out.println();
-        String result = (response.charAt(0) == 'L') ? "OK" : "NO";
+        String result = response;
 
         jsonObject.put("message", response);
         jsonObject.put("result", result);

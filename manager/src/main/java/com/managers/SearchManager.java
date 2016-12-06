@@ -38,10 +38,11 @@ public class SearchManager {
             System.out.println();
         }
 
-        jsonObject.put("name",saunaList.get(0).getName() );
-        jsonObject.put("price",saunaList.get(0).getPrice() );
-        jsonObject.put("capacity",saunaList.get(0).getCapacity() );
-        jsonObject.put("url",saunaList.get(0).getUrlPage() );
+
+        jsonObject.put("name", saunaList.get(0).getName());
+        jsonObject.put("price", saunaList.get(0).getPrice());
+        jsonObject.put("capacity", saunaList.get(0).getCapacity());
+        jsonObject.put("url", saunaList.get(0).getUrlPage());
 
         return jsonObject;
     }
@@ -49,32 +50,34 @@ public class SearchManager {
     public JSONObject findByOption(List<String> newOption) {
         JSONObject jsonObject = new JSONObject();
 
-        List<Sauna> allSauna =  Factoty.getInstance().getSaunaDAO().findByAll(newOption);
+        List<Sauna> allSauna = Factoty.getInstance().getSaunaDAO().findByAll(newOption);
 
-        for (int i = 0; i <allSauna.size() ; i++) {
 
-            System.out.print("Название - "+allSauna.get(i).getName());
-            System.out.print(", цена = "+ allSauna.get(i).getPrice());
-            System.out.print(", вместимость = "+allSauna.get(i).getCapacity());
-            System.out.println(", расположенны на = "+ allSauna.get(i).getAddress());
+        for (int i = 0; i < allSauna.size(); i++) {
+
+            System.out.print("Название - " + allSauna.get(i).getName());
+            System.out.print(", цена = " + allSauna.get(i).getPrice());
+            System.out.print(", вместимость = " + allSauna.get(i).getCapacity());
+            System.out.println(", расположенны на = " + allSauna.get(i).getAddress());
             System.out.println(allSauna.get(i).getDistrict());
             System.out.println(allSauna.get(i).getType());
             System.out.println(allSauna.get(i).getPhones());
             System.out.println();
         }
+        jsonObject.put("size", allSauna.size());
 
-        jsonObject.put("name",allSauna.get(0).getName() );
-        jsonObject.put("price",allSauna.get(0).getPrice() );
-        jsonObject.put("capacity",allSauna.get(0).getCapacity() );
-        jsonObject.put("url",allSauna.get(0).getUrlPage() );
+        for (int i = 0; i < allSauna.size(); i++) {
 
-
+            jsonObject.put("name" + i, allSauna.get(i).getName());
+            jsonObject.put("price"+ i, allSauna.get(i).getPrice());
+            jsonObject.put("capacity"+ i, allSauna.get(i).getCapacity());
+            jsonObject.put("url"+i, allSauna.get(i).getUrlPage());
+        }
 
 
 
         return jsonObject;
     }
-
 
 
 }

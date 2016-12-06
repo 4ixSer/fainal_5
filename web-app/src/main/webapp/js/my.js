@@ -1,5 +1,7 @@
 var dashboard = {
     login: function () {
+
+
         var log = $("#log").val();
         var pass = $("#pass").val();
         // console.log(log);
@@ -10,11 +12,12 @@ var dashboard = {
             dataType: "json",
             data: {requestType: "login", login: log, password: pass},
             success: function (data) {
-                console.log(data.result);
-                if (data.result == "OK") document.location.href = 'search.html';
-              document.getElementById("logmessage").innerText = data.message;
+
+                dashboard.loginAlert(data.result);
+                if (data.result == "LoginSuccess") document.location.href = 'search.html';
             }
         });
+
     },
 
 
@@ -22,17 +25,17 @@ var dashboard = {
     registration: function () {
         var log = $("#log").val();
         var pass = $("#pass").val();
-        console.log(log);
-        console.log(pass);
+
         $.ajax({
             type: "POST",
             url: "/api",
             dataType: "json",
             data: {requestType: "registration", login: log, password: pass},
             success: function (data) {
-                console.log(data.result);
-                if (data.result == "OK") document.location.href = 'search.html';
-                document.getElementById("logmessage").innerText = data.message;
+
+                dashboard.loginAlert(data.result);
+                if (data.result == "RegistrSuccess") document.location.href = 'search.html';
+
             }
         });
     },
@@ -40,7 +43,7 @@ var dashboard = {
     search: function () {
         var name = $("#searchName").val();
 
-        console.log(name);
+
          $.ajax({
             type: "POST",
             url: "/api",
@@ -48,15 +51,8 @@ var dashboard = {
             data: {requestType: "searchName", name: name},
             success: function (data) {
 
-                // if (data.result == "OK") {
-                //     document.location.href = 'search.html';}
-                document.getElementById("nameSauna1").innerText = data.name;
-                document.getElementById("price").innerText = data.price;
-                document.getElementById("capacity").innerText = data.capacity;
-                document.getElementById("image").src  = data.url;
+                dashboard.addСell(data.url,data.name,data.capacity,data.price);
 
-                console.log(data.result);
-                console.log(data.name);
             }
         });
     },
@@ -67,11 +63,6 @@ var dashboard = {
         var minCapacity = $("#amount2").val();
         var maxCapacity = $("#amount_2").val();
         var district=  $("#myselect").val();
-        console.log(minPrice);
-        console.log(maxPrice);
-        console.log(minCapacity);
-        console.log(maxCapacity);
-        console.log(district);
 
 
         $.ajax({
@@ -81,19 +72,193 @@ var dashboard = {
             data: {requestType: "searchOptions", minPrice: minPrice, maxPrice:maxPrice,
                 minCapacity: minCapacity,maxCapacity:maxCapacity,district: district},
             success: function (data) {
+                console.log(data.size);
+                if(data.size==0)
+                    console.log("Не нашли не одного");
+                else {
 
-                // if (data.result == "OK") {
-                //     document.location.href = 'search.html';}
-                document.getElementById("nameSauna1").innerText = data.name;
-                document.getElementById("price").innerText = data.price;
-                document.getElementById("capacity").innerText = data.capacity;
-                document.getElementById("image").src  = data.url;
+                    var position1 = document.getElementById("newCell");
 
-                console.log(data.result);
-                console.log(data.name);
+                    while (position1.hasChildNodes()) {
+                        position1.removeChild(position1.firstChild);
+                    }
+
+
+
+                    for (var i=0;i<data.size;i++){
+                        // dashboard.addСell(data.("url "+,data.name,data.capacity,data.price);
+                        // var name= "name"+i;
+                        // console.log(name);
+
+                        switch (i){
+                            case 0:
+                                dashboard.addСell(data.url0,data.name0,data.capacity0,data.price0);
+                                break;
+                            case 1:
+                                dashboard.addСell(data.url1,data.name1,data.capacity1,data.price1);
+                                break;
+                            case 2:
+                                dashboard.addСell(data.url2,data.name2,data.capacity2,data.price2);
+                                break;
+                            case 3:
+                                dashboard.addСell(data.url3,data.name3,data.capacity3,data.price3);
+                                break;
+                            case 4:
+                                dashboard.addСell(data.url4,data.name4,data.capacity4,data.price4);
+                                break;;
+                            case 5:
+                                dashboard.addСell(data.url5,data.name5,data.capacity5,data.price5);
+                                break;
+                            case 6:
+                                dashboard.addСell(data.url6,data.name6,data.capacity6,data.price6);
+                                break;
+                            case 7:
+                                dashboard.addСell(data.url7,data.name7,data.capacity7,data.price7);
+                                break;
+                            case 8:
+                                dashboard.addСell(data.url8,data.name8,data.capacity8,data.price8);
+                                break;
+                            case 9:
+                                dashboard.addСell(data.url9,data.name9,data.capacity9,data.price9);
+                                break;
+                            case 10:
+                                dashboard.addСell(data.url10,data.name10,data.capacity10,data.price10);
+                                break;
+                            case 11:
+                                dashboard.addСell(data.url11,data.name11,data.capacity11,data.price11);
+                                break;
+
+
+                                // dashboard.addСell(data.("url0 "+i,data.name0,data.capacity0,data.price0);
+                        }
+
+                    }
+                    // console.log(data.name0);
+                    // console.log(data.name1);
+                    // console.log(data.name2);
+                    // console.log(data.name3);
+
+
+                }
+
+
+
+
             }
         });
+    },
+    /*
+    Функция которая будет выводить Состояние логининга/регистрации пользователю
+
+
+
+
+     */
+    loginAlert: function(status) {
+
+        var div = document.createElement('div');
+        if(status=='LoginSuccess') {
+            div.innerHTML = "Well done! Вы залогинились.";
+            div.className = "alert alert-success";
+        }
+        else if(status=='RegistrSuccess') {
+            div.innerHTML = "Well done! Регистрация прошла успешно.";
+            div.className = "alert alert-success";
+        }
+        else if(status=='UserNotFound'){
+            div.innerHTML = "User not found.";
+            div.className = "alert alert-danger";
+        }
+        else if(status=='LoginIsUse'){
+            div.innerHTML = "Login is already in use.";
+            div.className = "alert alert-danger";
+        }
+        else if(status=='PasswordIsIncorrect'){
+            div.innerHTML = "Password is incorrect. Min length is 5, max length is 24";
+            div.className = "alert alert-warning";
+        }
+        document.getElementById("myList").insertBefore(div,document.getElementById("myList").firstChild);
+
+        <!--Закрытие спуся время -->
+        setTimeout(function() {
+            div.parentNode.removeChild(div);
+        }, 5000);
+
+    },
+
+    addСell: function(url,name, capacity, prise) {
+
+        var div = document.createElement('div');
+        div.className = "col-xs-12 col-sm-6 col-md-4 col-lg-4";
+
+
+        var position1 = document.getElementById("newCell");
+        position1.insertBefore(div, document.getElementById("newCell").firstChild);
+
+
+        var div2 = document.createElement('div');
+        div2.className = "thumbnail";
+
+        var position2 = position1.firstChild;
+        position2.appendChild(div2);
+
+        var img = document.createElement('img');
+        //ввести сюда url foto
+        img.src = url;
+
+        var position3 = position2.firstChild;
+        position3.appendChild(img);
+
+        var div3 = document.createElement('div');
+        div3.className = "caption";
+        position3.appendChild(div3);
+
+        var position4 = position3.lastChild;
+        var ahref = document.createElement('a');
+
+        //ввести сюда ссылку или запрос еще не продумал
+        ahref.href = "#";
+        ahref.innerHTML = "<h2>"+name+"</h2>";
+        position4.appendChild(ahref);
+
+
+
+        var p1 = document.createElement('p');
+        //ввести сюда количества человек
+        p1.innerHTML = "    Вместимость: "+capacity+" человек ";
+        position4.appendChild(p1);
+
+        var position5 = position4.lastChild;
+
+        var i1 = document.createElement('i');
+        i1.className = "fa fa-users fa-2x";
+        i1.style = "color:#f0ad4e";
+        position5.insertBefore(i1, position5.lastChild);
+
+
+        var p2 = document.createElement('p');
+        //ввести сюда количества  Цена
+        p2.innerHTML = " Цена от: "+ prise +" грн/час";
+        position4.appendChild(p2);
+
+        position5 = position4.lastChild;
+        var i2 = document.createElement('i');
+        i2.className = "fa fa-money fa-2x";
+        i2.style = "color:#5cb85c";
+
+        position5.insertBefore(i2, position5.lastChild);
+        var ahref2 = document.createElement('a');
+        ahref2.href = "office.html";
+        ahref2.innerHTML = " Подробней ";
+        ahref2.className = "btn btn-info btn-block";
+        position4.appendChild(ahref2);
+        position5 = position4.lastChild;
+
+        var i3 = document.createElement('i');
+        i3.className = "fa fa-arrow-right";
+        position5.appendChild(i3);
     }
 
 
-};
+
+    };
