@@ -37,12 +37,15 @@ public class SearchManager {
             System.out.println(saunaList.get(i).getPhones());
             System.out.println();
         }
+        jsonObject.put("size", saunaList.size());
 
+        for (int i = 0; i < saunaList.size(); i++) {
 
-        jsonObject.put("name", saunaList.get(0).getName());
-        jsonObject.put("price", saunaList.get(0).getPrice());
-        jsonObject.put("capacity", saunaList.get(0).getCapacity());
-        jsonObject.put("url", saunaList.get(0).getUrlPage());
+            jsonObject.put("name" + i, saunaList.get(i).getName());
+            jsonObject.put("price"+ i, saunaList.get(i).getPrice());
+            jsonObject.put("capacity"+ i, saunaList.get(i).getCapacity());
+            jsonObject.put("url"+i, saunaList.get(i).getUrlPage());
+        }
 
         return jsonObject;
     }
